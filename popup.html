@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<style>
+  body { width: 290px; margin: 0; padding: 14px; font-family: system-ui, sans-serif; background:#1f1f1f; color:#eee; }
+  h1 { font-size: 14px; margin: 0 0 10px; font-weight: 600; }
+  .row { display:flex; align-items:center; gap:8px; }
+  input[type=range] { flex:1; }
+  input[type=number] { width:64px; padding:4px; background:#333; color:#eee; border:1px solid #555; border-radius:4px; }
+  .presets { display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+  button { background:#333; color:#eee; border:1px solid #555; border-radius:6px; padding:5px 9px; cursor:pointer; }
+  button:hover { background:#444; }
+  .wide { margin-top:10px; width:100%; }
+  #status { font-size:12px; color:#aaa; margin-top:10px; min-height:16px; }
+  .hint { font-size:11px; color:#888; margin-top:8px; line-height:1.4; }
+  .credit { margin-top:12px; padding-top:10px; border-top:1px solid #333; text-align:center; font-size:11px; color:#888; }
+  .credit a { color:#60a5fa; text-decoration:none; font-weight:600; }
+  .credit a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+  <h1>🎧 Bu sekmenin sesi</h1>
+  <div class="row">
+    <input type="range" id="slider" min="0" max="100" step="0.5" value="100">
+    <input type="number" id="num" min="0" max="100" step="0.5" value="100"> %
+  </div>
+  <div class="presets" id="presets"></div>
+  <button class="wide" id="pin">📌 Bu sekmeyi kısayol hedefi yap</button>
+  <button class="wide" id="reset">Sıfırla (YouTube'a bırak)</button>
+  <div id="status"></div>
+  <div class="hint">Kısayollar: <b>Ctrl+Shift+↑</b> / <b>Ctrl+Shift+↓</b> (%1 artır / azalt).<br>Değiştirmek için: chrome://extensions/shortcuts</div>
+  <div class="credit">Created By <a id="creator" href="https://www.linkedin.com/in/KULLANICI-ADIN" target="_blank" rel="noopener noreferrer">Kubilay Taşkafa</a></div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Hassas Ses",
+  "version": "1.1.0",
+  "description": "YouTube sekmesinin sesini %1'lik adımlarla ayarla. Sekme bazlı çalışır, kısayol desteği vardır.",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Hassas Ses"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "ses-artir": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Up",
+        "mac": "Command+Shift+Up"
+      },
+      "description": "Hedef YouTube sekmesinin sesini %1 artır"
+    },
+    "ses-azalt": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Down",
+        "mac": "Command+Shift+Down"
+      },
+      "description": "Hedef YouTube sekmesinin sesini %1 azalt"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://music.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "author": "Kubilay Taşkafa"
+}
